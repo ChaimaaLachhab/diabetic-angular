@@ -1,0 +1,28 @@
+<main class="main">
+  <div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let diaberic of diabetics">
+          <td>{{ diaberic.id }}</td>
+          <td>{{ diaberic.name }}</td>
+          <td><a href="mailto:{{ diaberic.email }}">{{ diaberic.email }}</a></td>
+          <td>
+            <a class="btn btn-primary" [routerLink]="['/update', diaberic.id]">Update</a>
+            <button class="btn btn-danger" type="button" (click)="deletediaberic(diaberic.id)">Delete</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+<router-outlet></router-outlet>
