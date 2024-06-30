@@ -1,28 +1,37 @@
-<main class="main">
-  <div class="card my-5">
-    <div class="card-body">
-      <table class="table table-bordered table-striped">
-        <thead class="thead-dark">
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col">Email</th>
-          <th scope="col">Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let diaberic of diabetics">
-          <td>{{ diaberic.id }}</td>
-          <td>{{ diaberic.name }}</td>
-          <td><a href="mailto:{{ diaberic.email }}">{{ diaberic.email }}</a></td>
-          <td>
-            <a class="btn btn-primary" [routerLink]="['/update', diaberic.id]">Update</a>
-            <button class="btn btn-danger" type="button" (click)="deletediaberic(diaberic.id)">Delete</button>
-          </td>
-        </tr>
-        </tbody>
-      </table>
+<div class="container" data-aos="fade-up" data-aos-delay="100">
+  <h4>Table</h4>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="table-wrap">
+        <table class="table table-responsive-xl">
+          <thead>
+          <tr>
+            <th >#</th>
+            <th >Name</th>
+            <th >Weight</th>
+            <th >Height</th>
+            <th >Email</th>
+            <th >Actions</th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <tr *ngFor="let diabetic of diabetics">
+            <td>{{ diabetic.id }}</td>
+            <td>{{ diabetic.name }}</td>
+            <td>{{ diabetic.weight }}</td>
+            <td>{{ diabetic.height }}</td>
+            <td>{{ diabetic.name }}</td>
+            <td><a href="mailto:{{ diabetic.email }}">{{ diabetic.email }}</a></td>
+            <td>
+              <a class="btn btn-primary" [routerLink]="['/update-diabetic', diabetic.id]">Update</a>
+              <button class="btn btn-danger" type="button" (click)="deleteDiabetic(diabetic.id)">Delete</button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-</main>
+</div>
 <router-outlet></router-outlet>

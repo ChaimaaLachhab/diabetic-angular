@@ -7,7 +7,7 @@ import { Diabetic } from '../model/diabetic';
   providedIn: 'root'
 })
 export class DiabeticService {
-  private apiUrl = 'http://localhost:8080/api/users';
+  private apiUrl = 'http://localhost:8083/api/diabetics';
 
   constructor(private http: HttpClient) { }
 
@@ -15,12 +15,20 @@ export class DiabeticService {
     return this.http.get<Diabetic[]>(this.apiUrl);
   }
 
-  save(user: Diabetic): Observable<Diabetic> {
-    return this.http.post<Diabetic>(this.apiUrl, user);
+  save(diabetic: Diabetic): Observable<Diabetic> {
+    return this.http.post<Diabetic>(this.apiUrl, diabetic);
   }
 
   deleteDiabetic(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+
+  getDiabetic(id: number): Observable<Diabetic> {
+    return this.http.get<Diabetic>(`${this.apiUrl}/${id}`);
+  }
+
+  updateDiabetic(id: number, diabetic: Diabetic): Observable<Diabetic> {
+    return this.http.put<Diabetic>(`${this.apiUrl}/${id}`, diabetic);
   }
 
 }

@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/diabetics")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:51603")
 
 public class DiabeticController {
 
@@ -27,7 +27,7 @@ public class DiabeticController {
     }
 
     @PostMapping
-    public Diabetic createUser(@RequestBody Diabetic diabetic) {
+    public Diabetic createDiabetic(@RequestBody Diabetic diabetic) {
         return diabeticService.saveDiabetic(diabetic);
     }
 

@@ -1,4 +1,4 @@
-import { Diabetic } from '../model/diabetic';
+import { Diabetic } from './diabetic';
 
 describe('Diabetic', () => {
   it('should create an instance', () => {

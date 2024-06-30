@@ -1,0 +1,50 @@
+<!-- Appointment Section -->
+<section id="appointment" class="appointment section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>History Program</h2>
+    <p>Record your blood sugar levels.</p>
+  </div><!-- End Section Title -->
+
+  <app-chart [glycemies]="glycemies"></app-chart>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <h4>Table</h4>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="table-wrap">
+          <table class="table table-responsive-xl">
+            <thead>
+            <tr>
+              <th>#</th>
+              <th>Value</th>
+              <th>Date</th>
+              <th>Action</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr class="alert" role="alert" *ngFor="let glycemie of glycemies">
+              <td>{{ glycemie.id }}</td>
+              <td>{{ glycemie.value }}</td>
+              <td>{{ glycemie.date}}</td>
+              <td>
+                <button mat-fab aria-label="Example icon button with a delete icon" (click)="deleteGlycemie(glycemie.id)">
+                  <mat-icon class="mat-icon-rtl-mirror">delete</mat-icon>
+                </button>
+                <button mat-fab aria-label="Example icon button with a delete icon" [routerLink]="['/update-glycemie', glycemie.id]">
+                  <mat-icon class="mat-icon-rtl-mirror">update</mat-icon>
+                </button>
+
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section><!-- /Appointment Section -->
+<router-outlet></router-outlet>

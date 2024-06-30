@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/Glycemies")
-@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/api/glycemies")
+@CrossOrigin(origins = "http://localhost:51603")
 
 public class GlycemiaController {
 
