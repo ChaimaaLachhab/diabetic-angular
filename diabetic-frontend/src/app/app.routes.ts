@@ -17,8 +17,6 @@ export const routes: Routes = [
   { path: 'addGlycemie', component: GlycemieFormComponent },
   { path: 'update-glycemie/:id', component: GlycemieFormUpdateComponent },
   { path:'deleteGlycemie' ,component: GlycemieListComponent},
-
-  { path:'app' ,component: AppComponent},
-
-  { path: '', redirectTo: '/app', pathMatch: 'full' }
+  
+  { path: '', redirectTo: '/addDiabetic', pathMatch: 'full' }
 ];

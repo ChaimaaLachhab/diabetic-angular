@@ -1,17 +1,41 @@
-<div class="card my-5">
-  <div class="card-body">
-    <form [formGroup]="glycemieForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="value">Value</label>
-        <input type="number" formControlName="value" class="form-control" id="value" placeholder="Enter value" required>
+<!-- Section Title -->
+<div class="container section-title" data-aos="fade-up">
+  <h2>Add Glycemie</h2>
+  <p>Add your glucemie value</p>
+</div><!-- End Section Title -->
+
+<div class="container-xl px-4 program-popup" id="programPopup" style="padding: 20px; max-width: 80%;">
+  <div class="row">
+    <div class="col-xl-12">
+      <div class="card mb-4" style="box-shadow: 0 0.15rem 1.75rem 0 rgba(33, 40, 50, 0.15); border-radius: 15px;">
+        <div class="card-header" style="background-color: var(--nav-hover-color); color: white; font-weight: bold; border-radius: 15px 15px 0 0; padding: 1rem 1.5rem;">Add Glycemie</div>
+        <div class="card-body" style="padding: 2rem;">
+
+          <form [formGroup]="glycemieForm" (ngSubmit)="onSubmit()">
+            <div class="container-xl px-4">
+              <div class="row" style="display: flex; align-items: center; justify-content: center;">
+                <div class="col-md-5 form-group mt-3 mt-md-0 me-2">
+                  <label for="value" class="col-form-label">Value:</label>
+                  <input type="number" class="form-control" id="value" formControlName="value" required style="border-radius: 10px; box-shadow: 0 0 5px rgba(25, 119, 204, 0.5);">
+                </div>
+              </div>
+
+              <div class="row" style="display: flex; align-items: center; justify-content: center;">
+                <div class="col-md-5 form-group mt-3 mt-md-0 me-2">
+                  <label for="date" class="col-form-label">Date:</label>
+                  <input type="datetime-local" class="form-control" id="date" formControlName="date" required style="border-radius: 10px; box-shadow: 0 0 5px rgba(25, 119, 204, 0.5);">
+                </div>
+              </div>
+
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary" style="background-color: var(--nav-hover-color); border-color: var(--nav-color); border-radius: 20px; padding: 0.5rem 1.5rem; box-shadow: 0 0 10px rgba(25, 119, 204, 0.5); margin-top: 30px;">Save</button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="date">Date</label>
-        <input type="datetime-local" formControlName="date" class="form-control" id="date" placeholder="Enter date" required>
-      </div>
-      <button type="submit" [disabled]="!glycemieForm.valid" class="btn btn-info">Submit</button>
-    </form>
+    </div>
   </div>
 </div>
 
-<router-outlet />
+<router-outlet></router-outlet>

@@ -1,15 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {ActivatedRoute, Router, RouterOutlet} from "@angular/router";
 import {GlycemieService} from "../glycemie/service/glycemie-service.service";
 
 @Component({
   selector: 'app-glycemie-form-update',
   standalone: true,
-    imports: [
-        ReactiveFormsModule,
-        RouterOutlet
-    ],
+  imports: [ FormsModule, RouterOutlet, ReactiveFormsModule],
   templateUrl: './glycemie-form-update.component.html',
   styleUrl: './glycemie-form-update.component.css'
 })
@@ -44,10 +41,8 @@ export class GlycemieFormUpdateComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.glycemieForm.valid) {
       this.glycemieService.updateGlycemie(this.id, this.glycemieForm.value).subscribe(() => {
         this.router.navigate(['/glycemies']);
       });
-    }
   }
 }

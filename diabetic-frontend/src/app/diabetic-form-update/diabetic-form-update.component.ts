@@ -14,6 +14,7 @@ import { Diabetic } from '../diabetic/model/diabetic';
 export class DiabeticFormUpdateComponent  implements OnInit {
   diabeticForm: FormGroup;
   id: number = 0;
+  imgPreview: string = "https://static.vecteezy.com/system/resources/previews/019/896/012/original/female-user-avatar-icon-in-flat-design-style-person-signs-illustration-png.png";
 
   constructor(
     private route: ActivatedRoute,
@@ -23,6 +24,7 @@ export class DiabeticFormUpdateComponent  implements OnInit {
   ) {
     this.diabeticForm = this.fb.group({
       name: ['', Validators.required],
+      age: ['', Validators.required],
       weight: ['', Validators.required],
       height: ['', Validators.required],
       email: ['', Validators.required],
@@ -36,6 +38,7 @@ export class DiabeticFormUpdateComponent  implements OnInit {
       const idParam = params.get('id');
       this.id = idParam !== null ? +idParam : 0;
       this.loadUserDetails(this.id);
+      this.updateImagePreview();
     });
   }
 
@@ -45,11 +48,15 @@ export class DiabeticFormUpdateComponent  implements OnInit {
     });
   }
 
+  updateImagePreview(): void {
+    this.imgPreview = this.diabeticForm.get('picture')?.value || 'https://static.vecteezy.com/system/resources/previews/019/896/012/original/female-user-avatar-icon-in-flat-design-style-person-signs-illustration-png.png';
+  }
+
   onSubmit(): void {
-    if (this.diabeticForm.valid) {
+
       this.diabeticService.updateDiabetic(this.id, this.diabeticForm.value).subscribe(() => {
         this.router.navigate(['/diabetics']);
       });
-    }
+
   }
 }

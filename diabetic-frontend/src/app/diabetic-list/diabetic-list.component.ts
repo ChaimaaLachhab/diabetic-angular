@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { DiabeticService } from '../diabetic/service/diabetic-service.service';
 import { Diabetic } from '../diabetic/model/diabetic';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import {ChartComponent} from "../chart/chart.component";
+import {MatIcon} from "@angular/material/icon";
 
 @Component({
   selector: 'app-diabetic-list',
   templateUrl: './diabetic-list.component.html',
   styleUrls: ['./diabetic-list.component.css'],
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink]
+    imports: [CommonModule, RouterOutlet, RouterLink, ChartComponent, MatIcon]
 })
 export class DiabeticListComponent implements OnInit {
   diabetics: Diabetic[] = [];

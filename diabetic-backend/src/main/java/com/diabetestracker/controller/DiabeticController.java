@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/diabetics")
-@CrossOrigin(origins = "http://localhost:51603")
+@CrossOrigin(origins = "http://localhost:4200")
 
 public class DiabeticController {
 

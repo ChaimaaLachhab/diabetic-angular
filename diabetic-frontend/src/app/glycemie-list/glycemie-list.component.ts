@@ -21,7 +21,11 @@ export class GlycemieListComponent implements OnInit {
 
   ngOnInit(): void {
     this.glycemieService.findAll().subscribe(data => {
-      this.glycemies = data;
+      this.glycemies = data.map(item => ({
+        ...item,
+        date: new Date(item.date)
+      }));
+      console.log(this.glycemies);
     });
   }
 

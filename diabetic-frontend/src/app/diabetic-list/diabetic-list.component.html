@@ -1,3 +1,11 @@
+
+
+<!-- Section Title -->
+<div class="container section-title" data-aos="fade-up">
+  <h2>History Program</h2>
+  <p>Record your blood sugar levels.</p>
+</div><!-- End Section Title -->
+
 <div class="container" data-aos="fade-up" data-aos-delay="100">
   <h4>Table</h4>
   <div class="row">
@@ -21,11 +29,15 @@
             <td>{{ diabetic.name }}</td>
             <td>{{ diabetic.weight }}</td>
             <td>{{ diabetic.height }}</td>
-            <td>{{ diabetic.name }}</td>
             <td><a href="mailto:{{ diabetic.email }}">{{ diabetic.email }}</a></td>
             <td>
-              <a class="btn btn-primary" [routerLink]="['/update-diabetic', diabetic.id]">Update</a>
-              <button class="btn btn-danger" type="button" (click)="deleteDiabetic(diabetic.id)">Delete</button>
+              <button mat-fab aria-label="Example icon button with a delete icon" (click)="deleteDiabetic(diabetic.id)">
+                <mat-icon class="mat-icon-rtl-mirror">delete</mat-icon>
+              </button>
+              <button mat-fab aria-label="Example icon button with a delete icon" [routerLink]="['/update-diabetic', diabetic.id]">
+                <mat-icon class="mat-icon-rtl-mirror">update</mat-icon>
+              </button>
+
             </td>
           </tr>
           </tbody>

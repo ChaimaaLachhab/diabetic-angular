@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import {RouterLink} from "@angular/router";
+import {RouterLink, RouterOutlet} from "@angular/router";
 import {Glycemie} from "../glycemie/model/glycemie";
 
 @Component({
   selector: 'app-service',
   standalone: true,
-  imports: [RouterLink],
+    imports: [RouterLink, RouterOutlet],
   templateUrl: './service.component.html',
   styleUrl: './service.component.css'
 })

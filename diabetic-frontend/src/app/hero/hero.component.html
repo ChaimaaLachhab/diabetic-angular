@@ -1,15 +1,27 @@
 <!-- Hero Section -->
 <section id="hero" class="hero section">
 
-  <img src="https://www.fitterfly.com/blog/wp-content/uploads/2022/11/vegetables-for-diabetes-scaled.jpg" alt="" data-aos="fade-in">
+  <img ngSrc="/assets/img/hero-bg.jpg" alt="" data-aos="fade-in" height="846" width="1920">
 
   <div class="container position-relative">
 
     <div class="welcome position-relative" data-aos="fade-down" data-aos-delay="100">
-      <h2>GENERAL INFORMATION ABOUT GLYCEMIA RECORDS</h2>
-      <p>Understanding and monitoring your blood sugar levels is crucial for effective diabetes management.</p>
-    </div>
+      <h2>WELCOME TO MEDILAB</h2>
+      <p>We are a team of talented designers making websites with Bootstrap</p>
+    </div><!-- End Welcome -->
+
     <div class="content row gy-4">
+      <div class="col-lg-4 d-flex align-items-stretch">
+        <div class="why-box" data-aos="zoom-out" data-aos-delay="200">
+          <h3>Why Choose Medilab?</h3>
+          <p>
+            We provide comprehensive tools and services for monitoring and managing diabetes, helping you maintain your health and well-being. Our platform offers personalized insights and recommendations based on your data.
+          </p>
+          <div class="text-center">
+            <a th:href="@{/#about}" class="more-btn"><span>Learn More</span> <i class="bi bi-chevron-right"></i></a>
+          </div>
+        </div>
+      </div><!-- End Why Box -->
 
       <div class="col-lg-8 d-flex align-items-stretch">
         <div class="d-flex flex-column justify-content-center">
@@ -17,25 +29,25 @@
 
             <div class="col-xl-4 d-flex align-items-stretch">
               <div class="icon-box" data-aos="zoom-out" data-aos-delay="300">
-                <i class="bi bi-clipboard-data"></i> <!-- Changed icon to clipboard-data -->
-                <h4>Importance of Glycemia Records</h4>
-                <p>Helps track your blood sugar levels over time. Facilitates personalized diabetes management strategies.</p>
+                <i class="bi bi-heart"></i>
+                <h4>Personalized Glycemia Tracking</h4>
+                <p>Monitor your blood sugar levels with easy-to-use tools and get personalized insights and trends to help manage your diabetes effectively.</p>
               </div>
             </div><!-- End Icon Box -->
 
             <div class="col-xl-4 d-flex align-items-stretch">
               <div class="icon-box" data-aos="zoom-out" data-aos-delay="400">
-                <i class="bi bi-activity"></i> <!-- Changed icon to activity -->
-                <h4>Impact on Health</h4>
-                <p>Regular monitoring helps maintain stable blood sugar levels. Reduces the risk of diabetes-related complications by allowing timely interventions.</p>
+                <i class="bi bi-nutrition"></i>
+                <h4>Nutrition and Diet Plans</h4>
+                <p>Access tailored meal plans and nutrition advice to help you maintain a healthy diet and manage your blood sugar levels effectively.</p>
               </div>
             </div><!-- End Icon Box -->
 
             <div class="col-xl-4 d-flex align-items-stretch">
               <div class="icon-box" data-aos="zoom-out" data-aos-delay="500">
-                <i class="bi bi-journal-medical"></i> <!-- Changed icon to journal-medical -->
-                <h4>Recommended Practices</h4>
-                <p>Track your blood sugar levels before and after meals. Record any symptoms and related factors. Share your records with your healthcare provider for better management.</p>
+                <i class="bi bi-activity"></i>
+                <h4>Exercise and Fitness Programs</h4>
+                <p>Engage in customized exercise routines designed to improve your overall health and support your diabetes management goals.</p>
               </div>
             </div><!-- End Icon Box -->
 
@@ -43,6 +55,7 @@
         </div>
       </div>
     </div><!-- End Content -->
+
   </div>
 
 </section><!-- /Hero Section -->
